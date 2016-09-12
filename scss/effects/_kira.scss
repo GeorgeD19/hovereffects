@@ -1,0 +1,65 @@
+// Kira
+figure {
+	&.effect-kira {
+		background: #fff;
+		text-align: left;
+		img {
+			-webkit-transition: opacity 0.35s;
+			transition: opacity 0.35s;
+		}
+		p {
+			padding: 2.25em 0.5em;
+			font-weight: 600;	
+			font-size: 100%;
+			line-height: 1.5;
+			opacity: 0;
+			-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+			transition: opacity 0.35s, transform 0.35s;
+			-webkit-transform: translate3d(0,-10px,0);
+			transform: translate3d(0,-10px,0);
+			a {
+				margin: 0 0.5em;
+				color: #101010;
+				&:hover, &:focus {
+					opacity: 0.6;
+				}
+			}
+		}
+		figcaption {
+			z-index: 1;
+			&::before {
+				position: absolute;
+				top: 0;
+				right: 2em;
+				left: 2em;
+				z-index: -1;
+				height: 3.5em;
+				background: #fff;
+				content: '';
+				-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+				transition: opacity 0.35s, transform 0.35s;
+				-webkit-transform: translate3d(0,4em,0) scale3d(1,0.023,1) ;
+				transform: translate3d(0,4em,0) scale3d(1,0.023,1);
+				-webkit-transform-origin: 50% 0;
+				transform-origin: 50% 0;
+			}
+		}
+		&:hover {
+			img {
+				opacity: 0.5;
+			}
+			p {
+				opacity: 1;
+				-webkit-transform: translate3d(0,0,0);
+				transform: translate3d(0,0,0);
+			}
+			figcaption {
+				&::before {
+					opacity: 0.7;
+					-webkit-transform: translate3d(0,5em,0) scale3d(1,1,1) ;
+					transform: translate3d(0,5em,0) scale3d(1,1,1);
+				}
+			}
+		}
+	}
+}
